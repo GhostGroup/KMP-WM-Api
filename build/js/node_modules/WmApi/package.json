@@ -1,0 +1,24 @@
+{
+  "main": "kotlin/WmApi.js",
+  "devDependencies": {
+    "dukat": "0.5.7"
+  },
+  "dependencies": {
+    "ktor-ktor-client-core-jsLegacy": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\ktor-ktor-client-core-jsLegacy\\1.4.0",
+    "ktor-ktor-http-cio-jsLegacy": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\ktor-ktor-http-cio-jsLegacy\\1.4.0",
+    "ktor-ktor-http-jsLegacy": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\ktor-ktor-http-jsLegacy\\1.4.0",
+    "ktor-ktor-utils-jsLegacy": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\ktor-ktor-utils-jsLegacy\\1.4.0",
+    "ktor-ktor-io-jsLegacy": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\ktor-ktor-io-jsLegacy\\1.4.0",
+    "kotlinx-coroutines-core": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\kotlinx-coroutines-core\\1.3.9",
+    "kotlinx-atomicfu": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\kotlinx-atomicfu\\0.14.4",
+    "kotlin": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\kotlin\\1.4.10",
+    "kotlinx-serialization-kotlinx-serialization-core-jsLegacy": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\kotlinx-serialization-kotlinx-serialization-core-jsLegacy\\1.0.0-RC",
+    "kotlin-test-js-runner": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\kotlin-test-js-runner\\1.4.10",
+    "kotlin-test": "file:C:\\Users\\Daniel\\IdeaProjects\\WmApi\\build\\js\\packages_imported\\kotlin-test\\1.4.10"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": [],
+  "name": "WmApi",
+  "version": "1.0.0-SNAPSHOT"
+}

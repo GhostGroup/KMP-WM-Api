@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="HelloWorldTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-09-12T03:01:12" hostname="DESKTOP-DF0I7J2" time="0.003">
+  <properties/>
+  <testcase name="testRequest" classname="HelloWorldTest" time="0.003">
+    <failure message="AssertionError: Expected &lt;&gt;, actual &lt;kotlin.Unit&gt;." type="AssertionError">AssertionError: Expected &lt;&gt;, actual &lt;kotlin.Unit&gt;.
+	at Object.captureStack(C:\Users\Daniel\IdeaProjects\WmApi\build\js\node_modules\kotlin\kotlin\builtins.kt:103)
+	at AssertionError.constructor(C:/Users/Daniel/IdeaProjects/WmApi/build/js/packages/WmApi-test/adapter-browser.js:67626)
+	at &lt;global&gt;.new AssertionError(C:\Users\Daniel\IdeaProjects\WmApi\build\js\node_modules\kotlin\kotlin\exceptions.kt:85)
+	at DefaultJsAsserter.assertTrue(C:\Users\Daniel\IdeaProjects\WmApi\build\js\node_modules\kotlin-test\src\main\kotlin\kotlin\test\JsImpl.kt:23)
+	at DefaultJsAsserter.Asserter.assertEquals(C:\Users\Daniel\IdeaProjects\WmApi\build\js\node_modules\kotlin-test\Assertions.kt:245)
+	at DefaultJsAsserter.assertEquals(C:\Users\Daniel\IdeaProjects\WmApi\build\js\node_modules\kotlin-test\src\main\kotlin\kotlin\test\DefaultJsAsserter.kt:27)
+	at &lt;global&gt;.assertEquals(C:\Users\Daniel\IdeaProjects\WmApi\build\js\node_modules\kotlin-test\Assertions.kt:57)
+	at HelloWorldTest.testRequest(C:\Users\Daniel\IdeaProjects\WmApi\src\commonTest\kotlin\HelloWorldTest.kt:10)
+	at &lt;global&gt;.&lt;unknown&gt;(C:/Users/Daniel/IdeaProjects/WmApi/build/js/packages/WmApi-test/adapter-browser.js:198035)
+	at Context.&lt;anonymous&gt;(C:\Users\Daniel\IdeaProjects\WmApi\build\js\node_modules\src\KotlinTestTeamCityConsoleAdapter.ts:72)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,10 @@
+{
+  "main": "kotlin/WmApi.js",
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": [],
+  "name": "WmApi",
+  "version": "1.0.0-SNAPSHOT"
+}

@@ -1,0 +1,15 @@
+{
+  "main": "kotlin/ktor-ktor-client-core-jsLegacy.js",
+  "devDependencies": {},
+  "dependencies": {
+    "text-encoding": "0.7.0",
+    "node-fetch": "2.6.0",
+    "abort-controller": "3.0.0",
+    "ws": "6.2.1"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": [],
+  "name": "ktor-ktor-client-core-jsLegacy",
+  "version": "1.4.0"
+}
