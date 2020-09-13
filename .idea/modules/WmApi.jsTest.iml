@@ -5,8 +5,8 @@
       <configuration version="3" platform="JavaScript " allPlatforms="JS []" useProjectSettings="false" isTestModule="true" externalProjectId="WmApi">
         <dependsOnModuleNames>WmApi:commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>WmApi.jsMain</sourceSet>
           <sourceSet>WmApi.commonTest</sourceSet>
+          <sourceSet>WmApi.jsMain</sourceSet>
           <sourceSet>WmApi.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>

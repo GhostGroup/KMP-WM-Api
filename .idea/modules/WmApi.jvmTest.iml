@@ -5,8 +5,8 @@
       <configuration version="3" platform="JVM 1.8" allPlatforms="JVM [1.8]" useProjectSettings="false" isTestModule="true" externalProjectId="WmApi">
         <dependsOnModuleNames>WmApi:commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>WmApi.jvmMain</sourceSet>
           <sourceSet>WmApi.commonTest</sourceSet>
+          <sourceSet>WmApi.jvmMain</sourceSet>
           <sourceSet>WmApi.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>

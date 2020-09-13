@@ -7,7 +7,6 @@
         <externalSystemTestTasks>
           <externalSystemTestTask>jsBrowserTest|WmApi:jsTest|js</externalSystemTestTask>
           <externalSystemTestTask>jvmTest|WmApi:jvmTest|jvm</externalSystemTestTask>
-          <externalSystemTestTask>nativeTest|WmApi:nativeTest|native</externalSystemTestTask>
         </externalSystemTestTasks>
         <compilerSettings />
         <compilerArguments>
