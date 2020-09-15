@@ -8,8 +8,7 @@ class HelloTest {
     @Test
     fun test(){
         runBlocking {
-            val hello = HelloWorld()
-            assertEquals(hello.getCarouselAds("166"),"fasdfdsfdfasdfsdf sad" )
+
         }
     }
 }

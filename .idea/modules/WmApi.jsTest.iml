@@ -5,15 +5,14 @@
       <configuration version="3" platform="JavaScript " allPlatforms="JS []" useProjectSettings="false" isTestModule="true" externalProjectId="WmApi">
         <dependsOnModuleNames>WmApi:commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>WmApi.commonTest</sourceSet>
-          <sourceSet>WmApi.jsMain</sourceSet>
           <sourceSet>WmApi.commonMain</sourceSet>
+          <sourceSet>WmApi.jsMain</sourceSet>
+          <sourceSet>WmApi.commonTest</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>
           <externalSystemTestTask>jsBrowserTest|WmApi:jsTest|js</externalSystemTestTask>
         </externalSystemTestTasks>
-        <testOutputPath>$MODULE_DIR$/../../build/js/packages/WmApi-test/kotlin/WmApi-test.js</testOutputPath>
         <compilerSettings />
         <compilerArguments>
           <option name="outputFile" value="$MODULE_DIR$/../../build/js/packages/WmApi-test/kotlin/WmApi-test.js" />
