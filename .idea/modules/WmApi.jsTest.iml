@@ -5,17 +5,20 @@
       <configuration version="3" platform="JavaScript " allPlatforms="JS []" useProjectSettings="false" isTestModule="true" externalProjectId="WmApi">
         <dependsOnModuleNames>WmApi:commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>WmApi.commonMain</sourceSet>
           <sourceSet>WmApi.jsMain</sourceSet>
+          <sourceSet>WmApi.commonMain</sourceSet>
           <sourceSet>WmApi.commonTest</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>
           <externalSystemTestTask>jsBrowserTest|WmApi:jsTest|js</externalSystemTestTask>
         </externalSystemTestTasks>
-        <compilerSettings />
+        <testOutputPath>$MODULE_DIR$/../../build/classes/kotlin/js/test/WmApi_test.js</testOutputPath>
+        <compilerSettings>
+          <option name="additionalArguments" value="-Xir-module-name=me.daniel:WmApi_test -Xir-only -Xir-produce-klib-dir" />
+        </compilerSettings>
         <compilerArguments>
-          <option name="outputFile" value="$MODULE_DIR$/../../build/js/packages/WmApi-test/kotlin/WmApi-test.js" />
+          <option name="outputFile" value="$MODULE_DIR$/../../build/classes/kotlin/js/test/WmApi_test.js" />
           <option name="noStdlib" value="true" />
           <option name="sourceMap" value="true" />
           <option name="metaInfo" value="true" />

@@ -8,16 +8,13 @@
           <dependsOn>WmApi:iosTest</dependsOn>
         </dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>WmApi.commonMain</sourceSet>
-          <sourceSet>WmApi.iosMain</sourceSet>
-          <sourceSet>WmApi.commonTest</sourceSet>
           <sourceSet>WmApi.iosX64Main</sourceSet>
           <sourceSet>WmApi.iosTest</sourceSet>
+          <sourceSet>WmApi.iosMain</sourceSet>
+          <sourceSet>WmApi.commonMain</sourceSet>
+          <sourceSet>WmApi.commonTest</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
-        <externalSystemTestTasks>
-          <externalSystemTestTask>iosX64Test|WmApi:iosX64Test|iosX64</externalSystemTestTask>
-        </externalSystemTestTasks>
         <compilerSettings />
         <compilerArguments>
           <option name="languageVersion" value="1.4" />

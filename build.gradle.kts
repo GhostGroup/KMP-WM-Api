@@ -17,7 +17,7 @@ kotlin {
             kotlinOptions.jvmTarget = "1.8"
         }
     }
-    js {
+    js(IR) {
         browser {
             testTask {
                 useKarma {
@@ -26,6 +26,7 @@ kotlin {
                 }
             }
         }
+        binaries.executable()
     }
     ios {
         binaries {
