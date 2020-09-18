@@ -8,8 +8,8 @@
           <dependsOn>WmApi:iosMain</dependsOn>
         </dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>WmApi.commonMain</sourceSet>
           <sourceSet>WmApi.iosMain</sourceSet>
+          <sourceSet>WmApi.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />

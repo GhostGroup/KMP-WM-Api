@@ -6,5 +6,4 @@ internal object WmApiDependencies {
         ignoreUnknownKeys = true
         isLenient = true}
     var httpClient:HttpClient = HttpClient()
-
 }

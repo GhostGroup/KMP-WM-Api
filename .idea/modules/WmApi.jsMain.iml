@@ -8,7 +8,6 @@
           <sourceSet>WmApi.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
-        <productionOutputPath>$MODULE_DIR$/../../build/classes/kotlin/js/main/WmApi.js</productionOutputPath>
         <compilerSettings>
           <option name="additionalArguments" value="-Xir-module-name=me.daniel:WmApi -Xir-only -Xir-produce-klib-dir" />
         </compilerSettings>
