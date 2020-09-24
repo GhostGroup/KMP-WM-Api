@@ -8,11 +8,11 @@
           <dependsOn>WmApi:iosTest</dependsOn>
         </dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>WmApi.iosTest</sourceSet>
-          <sourceSet>WmApi.iosArm64Main</sourceSet>
-          <sourceSet>WmApi.iosMain</sourceSet>
           <sourceSet>WmApi.commonMain</sourceSet>
+          <sourceSet>WmApi.iosTest</sourceSet>
+          <sourceSet>WmApi.iosMain</sourceSet>
           <sourceSet>WmApi.commonTest</sourceSet>
+          <sourceSet>WmApi.iosArm64Main</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />

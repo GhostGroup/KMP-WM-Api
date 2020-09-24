@@ -6,14 +6,13 @@
         <dependsOnModuleNames>WmApi:commonTest</dependsOnModuleNames>
         <sourceSets>
           <sourceSet>WmApi.jsMain</sourceSet>
-          <sourceSet>WmApi.commonMain</sourceSet>
           <sourceSet>WmApi.commonTest</sourceSet>
+          <sourceSet>WmApi.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>
           <externalSystemTestTask>jsBrowserTest|WmApi:jsTest|js</externalSystemTestTask>
         </externalSystemTestTasks>
-        <testOutputPath>$MODULE_DIR$/../../build/classes/kotlin/js/test/WmApi_test.js</testOutputPath>
         <compilerSettings>
           <option name="additionalArguments" value="-Xir-module-name=me.daniel:WmApi_test -Xir-only -Xir-produce-klib-dir" />
         </compilerSettings>
