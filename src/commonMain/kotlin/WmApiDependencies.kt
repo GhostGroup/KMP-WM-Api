@@ -7,5 +7,6 @@ object WmApiDependencies {
         isLenient = true}
     var httpClient:HttpClient = HttpClient()
     var baseUrl:String = "https://api-g.weedmaps.com"
+    var acceptanceUrl = "https://api-g-acceptance.internal-weedmaps.com"
 
 }

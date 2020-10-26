@@ -13,13 +13,6 @@ data class PcpCategory(
     val subCategories: Array<PcpSubCategory>?
 )
 
-@Serializable
-data class Category(
-    val id: String,
-    val title: String,
-    val facetType: String,
-    val uuid: String
-)
 
 @Serializable
 data class PcpSubCategory(
@@ -69,4 +62,6 @@ data class Listing(
 data class Location(
     val latitude: Double,
     val longitude: Double
-)
+){
+    fun toLatLngQueryFormat() = "$latitude,$longitude"
+}
