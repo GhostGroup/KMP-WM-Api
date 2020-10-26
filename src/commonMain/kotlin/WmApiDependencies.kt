@@ -6,7 +6,9 @@ object WmApiDependencies {
         ignoreUnknownKeys = true
         isLenient = true}
     var httpClient:HttpClient = HttpClient()
-    var baseUrl:String = "https://api-g.weedmaps.com"
+    var prodUrl = "https://api-g.weedmaps.com"
+
+    var baseUrl:String = prodUrl
     var acceptanceUrl = "https://api-g-acceptance.internal-weedmaps.com"
 
 }

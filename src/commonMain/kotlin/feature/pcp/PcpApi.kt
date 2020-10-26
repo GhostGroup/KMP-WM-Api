@@ -6,11 +6,6 @@ import io.ktor.client.statement.*
 import toWmResult
 
 class PcpApi {
-    val categoriesApiUrl = "${WmApiDependencies.baseUrl}/discovery/v1/categories?include[]=subcategories&filter[location]=any"
-
-    val testProduct = Product("imageurl", "Dans Drug Empo", "Dans Dank", Rating(5f, 200), PriceRange(20.0, 35.0, "USD"))
-    val testListing =
-        Listing("Dans Drug Empo", Rating(5f, 200), "Arlington VA", true, true, Location(38.847510, -77.131930))
 
     suspend fun getPcpCategory(location: Location): PcpModel {
         val categories:WmResult<ProductCategoriesResponse> = WmApiDependencies.httpClient
@@ -21,10 +16,15 @@ class PcpApi {
         return pcpModel
     }
 
-    private fun getCategoriesApiUrl(latlng:String):String = "$categoriesApiUrl&latlng=$latlng"
-
-    suspend fun getPcpSubcategory(category: Category): Array<PcpSubCategory> {
-        return arrayOf()
+    suspend fun getPcpSubcategory(categoryUuid: String, location:Location): Array<PcpSubCategory> {
+        val subcategories:WmResult<ProductCategoriesResponse> = WmApiDependencies.httpClient
+            .get<HttpResponse>(getSubcategoriesRoute(categoryUuid, location))
+            .toWmResult(WmApiDependencies.json)
+        val arrayOfSubcategories:Array<PcpSubCategory> = subcategories.getDataOrNull()?.data?.categories
+            ?.map { PcpSubCategory(it, null, null, null, null, null) }
+            ?.toTypedArray()
+                ?: arrayOf()
+        return arrayOfSubcategories
     }
 //        return arrayOf(
 //            PcpSubCategory(

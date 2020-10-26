@@ -17,7 +17,6 @@ data class PcpCategory(
 @Serializable
 data class PcpSubCategory(
     val category: Category,
-    val description: String,
     val learnExcept: String?,
     val learnImage: String?,
     val topRatedProduct: Product?,
