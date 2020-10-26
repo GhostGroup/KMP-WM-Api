@@ -1,8 +1,13 @@
 package feature.pcp
 
 import WmResult
+import feature.product.Product
+import feature.product.ProductsResponse
+import feature.product.getTrendingProductsRoute
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.Deferred
 import toWmResult
 
 class PcpApi {
@@ -20,31 +25,18 @@ class PcpApi {
         val subcategories:WmResult<ProductCategoriesResponse> = WmApiDependencies.httpClient
             .get<HttpResponse>(getSubcategoriesRoute(categoryUuid, location))
             .toWmResult(WmApiDependencies.json)
+        val productsRequest:Deferred<WmResult<ProductsResponse>> = CompletableDeferred(WmApiDependencies.httpClient
+            .get<HttpResponse>(getTrendingProductsRoute(location, categoryUuid, 30)).toWmResult(WmApiDependencies.json))
+
+        val errorProduct = Product(-1, "error", null, null, null, null, null, null, null, null, null, null, null,null)
+
+        val productsResponse = productsRequest.await().getDataOrNull()?.data?.products?.firstOrNull()
+        val popularProducts = productsRequest.await().getDataOrNull()?.data?.products?.filterIndexed { index, product -> index > 0 }?.toTypedArray()
         val arrayOfSubcategories:Array<PcpSubCategory> = subcategories.getDataOrNull()?.data?.categories
-            ?.map { PcpSubCategory(it, null, null, null, null, null) }
+            ?.map { PcpSubCategory(it, null, null, productsResponse ?: errorProduct, popularProducts, null) }
             ?.toTypedArray()
                 ?: arrayOf()
+
         return arrayOfSubcategories
     }
-//        return arrayOf(
-//            PcpSubCategory(
-//                Category(id = "sub1", title = "Subcategory 1", facetType = "category", uuid = "subuuid1"),
-//                description = "This is the content that comes from somewhere",
-//                learnExcept = "learn link excerpt",
-//                learnImage = "imageurl",
-//                topRatedProduct = testProduct,
-//                popularProducts = arrayOf(testProduct, testProduct, testProduct),
-//                nearbyListings = arrayOf(testListing, testListing, testListing)
-//            ),
-//            PcpSubCategory(
-//                Category(id = "sub2", title = "Subcategory 2", facetType = "category", uuid = "subuuid2"),
-//                description = "This is the content that comes from somewhere",
-//                learnExcept = "learn link excerpt",
-//                learnImage = "imageurl",
-//                topRatedProduct = testProduct,
-//                popularProducts = arrayOf(testProduct, testProduct, testProduct),
-//                nearbyListings = arrayOf(testListing, testListing, testListing)
-//            )
-//        )
-//    }
 }

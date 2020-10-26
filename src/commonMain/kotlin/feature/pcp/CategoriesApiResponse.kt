@@ -12,22 +12,22 @@ data class CategoryApiBody(
 )
 @Serializable
 data class Category(
-    val id: Int?,
-    val name: String?,
-    val slug: String?,
-    val facet_type: String?,
-    val uuid: String?,
-    val subcategories: Array<SubcategoryApiResponse>?,
-    val image_url: String?,
-    val total_products_count: Int
+    val id: Int? = null,
+    val name: String? = null,
+    val slug: String? = null,
+    val facet_type: String? = null,
+    val uuid: String? = null,
+    val subcategories: Array<SubcategoryApiResponse>? = arrayOf(),
+    val image_url: String? = null,
+    val total_products_count: Int? = null
 )
 @Serializable
 data class SubcategoryApiResponse(
-    val id: Int?,
-    val name: String?,
-    val slug: String?,
-    val facet_type: String?,
-    val uuid: String?,
-    val image_url: String?,
-    val total_products_count: Int
+    val id: Int?  = null,
+    val name: String? = null,
+    val slug: String? = null,
+    val facet_type: String? = null,
+    val uuid: String? = null,
+    val image_url: String? = null,
+    val total_products_count: Int?  = null
 )

@@ -6,72 +6,72 @@ import kotlinx.serialization.Serializable
 data class ListingResponse (val data:Data)
 
 @Serializable
-data class Data(val listings:Array<Listings>)
+data class Data(val listings:Array<Listing>)
 
 @Serializable
-data class Listings(
-    val id:Int?,
-    val name:String?,
-    val slug:String?,
-    val state:String?,
-    val best_of_weedmaps:Boolean?,
-    val social_equity:Boolean?,
-    val city:String?,
-    val type:String?,
-    val wmid:Int?,
-    val latitude:Double?,
-    val longitude:Double?,
-    val web_url:String?,
-    val package_level:String?,
-    val feature_order:Int?,
-    val ranking:Double?,
-    val rating:Double?,
-    val reviews_count:Int?,
-    val avatar_image:AvatarResponse?,
-    val license_type:String?,
-    val address:String?,
-    val distance:Double?,
-    val zip_code:String?,
-    val timezone:String?,
-    val intro_body:String?,
+data class Listing(
+    val id:Int? = null,
+    val name:String? = null,
+    val slug:String? = null,
+    val state:String? = null,
+    val best_of_weedmaps:Boolean? = null,
+    val social_equity:Boolean? = null,
+    val city:String? = null,
+    val type:String? = null,
+    val wmid:Int? = null,
+    val latitude:Double? = null,
+    val longitude:Double? = null,
+    val web_url:String? = null,
+    val package_level:String? = null,
+    val feature_order:Int? = null,
+    val ranking:Double? = null,
+    val rating:Double? = null,
+    val reviews_count:Int? = null,
+    val avatar_image:AvatarResponse? = null,
+    val license_type:String? = null,
+    val address:String? = null,
+    val distance:Double? = null,
+    val zip_code:String? = null,
+    val timezone:String? = null,
+    val intro_body:String? = null,
 //    val support_case_link:String?,
-    val gofundme_link:String?,
-    val static_map_url:String?,
-    val open_now:Boolean?,
-    val closes_in:String?,
-    val todays_hours_str:String?,
-    val min_age:Int?,
-    val region_id:Int?,
-    val menu_items_count:Int?,
-    val verified_menu_items_count:Int?,
-    val endorsement_badge_count:Int?,
-    val is_published:Boolean?,
-    val online_ordering:OnlineOrdering?,
-    val retailer_services:Array<String>?,
-    val has_curbside_pickup:Boolean?,
-    val has_featured_deal:Boolean?
+    val gofundme_link:String? = null,
+    val static_map_url:String? = null,
+    val open_now:Boolean? = null,
+    val closes_in:String? = null,
+    val todays_hours_str:String? = null,
+    val min_age:Int? = null,
+    val region_id:Int? = null,
+    val menu_items_count:Int? = null,
+    val verified_menu_items_count:Int? = null,
+    val endorsement_badge_count:Int? = null,
+    val is_published:Boolean? = null,
+    val online_ordering:OnlineOrdering? = null,
+    val retailer_services:Array<String>? = null,
+    val has_curbside_pickup:Boolean? = null,
+    val has_featured_deal:Boolean? = null
 
 )
 
 @Serializable
 data class OnlineOrdering(
-    val after_hours_enabled:Boolean?,
-    val enabled_for_pickup:Boolean?,
-    val enabled_for_delivery:Boolean?,
-    val identification_required:Boolean?,
-    val purchase_min:MoneyResponse?,
-    val fee:MoneyResponse?,
-    val eta_min:Int?,
-    val eta_max:Int?,
-    val display_eta:Boolean?,
-    val wm_service_fee:MoneyResponse?
+    val after_hours_enabled:Boolean? = null,
+    val enabled_for_pickup:Boolean? = null,
+    val enabled_for_delivery:Boolean? = null,
+    val identification_required:Boolean? = null,
+    val purchase_min:MoneyResponse? = null,
+    val fee:MoneyResponse? = null,
+    val eta_min:Int? = null,
+    val eta_max:Int? = null,
+    val display_eta:Boolean? = null,
+    val wm_service_fee:MoneyResponse? = null
 )
 
 @Serializable
 data class MoneyResponse(
-    val cents:Int,
-    val currency:String,
-    val amount:Double
+    val cents:Int?  = null,
+    val currency:String? = null,
+    val amount:Double? = null
 )
 
 @Serializable

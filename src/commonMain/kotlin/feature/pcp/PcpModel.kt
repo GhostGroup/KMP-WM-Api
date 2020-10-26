@@ -1,5 +1,7 @@
 package feature.pcp
 
+import core.listings.Listing
+import feature.product.Product
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -26,15 +28,6 @@ data class PcpSubCategory(
 
 
 @Serializable
-data class Product(
-    val productImage: String,
-    val listingName: String,
-    val productName: String,
-    val rating: Rating,
-    val priceRange: PriceRange
-)
-
-@Serializable
 data class Rating(
     val stars: Float,
     val ratings: Int
@@ -45,16 +38,6 @@ data class PriceRange(
     val minPrice: Double,
     val maxPrice: Double,
     val currency: String
-)
-
-@Serializable
-data class Listing(
-    val name: String,
-    val rating: Rating,
-    val desc: String,
-    val isOpen: Boolean,
-    val hasOnlineOrdering: Boolean,
-    val location: Location
 )
 
 @Serializable

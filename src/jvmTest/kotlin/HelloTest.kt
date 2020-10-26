@@ -18,8 +18,8 @@ class HelloTest {
     fun getProductSubcategories() {
         runBlocking {
             WmApiDependencies.baseUrl = WmApiDependencies.acceptanceUrl
-            val subcategoriesResponse = PcpApi().getPcpCategory(Location(37.773972,-122.431297))
-            assertEquals(subcategoriesResponse, "test")
+            val subcategoriesResponse = PcpApi().getPcpSubcategory("f12d28a5-dc36-41d2-98f8-56d6cf2d8225", Location(37.773972,-122.431297))
+            assertEquals(subcategoriesResponse.toString(), "test")
             WmApiDependencies.baseUrl = WmApiDependencies.prodUrl
         }
     }
