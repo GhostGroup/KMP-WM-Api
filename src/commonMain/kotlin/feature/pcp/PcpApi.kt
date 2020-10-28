@@ -28,12 +28,10 @@ class PcpApi {
         val productsRequest:Deferred<WmResult<ProductsResponse>> = CompletableDeferred(WmApiDependencies.httpClient
             .get<HttpResponse>(getTrendingProductsRoute(location, categoryUuid, 30)).toWmResult(WmApiDependencies.json))
 
-        val errorProduct = Product(-1, "error", null, null, null, null, null, null, null, null, null, null, null,null)
-
         val productsResponse = productsRequest.await().getDataOrNull()?.data?.products?.firstOrNull()
         val popularProducts = productsRequest.await().getDataOrNull()?.data?.products?.filterIndexed { index, product -> index > 0 }?.toTypedArray()
         val arrayOfSubcategories:Array<PcpSubCategory> = subcategories.getDataOrNull()?.data?.categories
-            ?.map { PcpSubCategory(it, null, null, productsResponse ?: errorProduct, popularProducts, null) }
+            ?.map { PcpSubCategory(it, null, null, productsResponse, popularProducts, null) }
             ?.toTypedArray()
                 ?: arrayOf()
 
