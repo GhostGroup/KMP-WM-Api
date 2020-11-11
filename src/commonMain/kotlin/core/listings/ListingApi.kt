@@ -6,7 +6,7 @@ import io.ktor.client.statement.*
 import toWmResult
 
 class ListingApi(){
-    private val baseListingUrl = "${InternalWmApiDependencies.baseUrl}/discovery/v1/listings"
+    private val baseListingUrl = "${WmApiDependencies.baseUrl}/discovery/v1/listings"
     suspend fun getListings():WmResult<ListingResponse>{
         return InternalWmApiDependencies.httpClient.get<HttpResponse>(baseListingUrl).toWmResult(InternalWmApiDependencies.json)
     }
