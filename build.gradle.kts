@@ -17,24 +17,24 @@ kotlin {
             kotlinOptions.jvmTarget = "1.8"
         }
     }
-    js(IR) {
-        browser {
-            testTask {
-                useKarma {
-                    useChromeHeadless()
-                    webpackConfig.cssSupport.enabled = true
-                }
-            }
-        }
-        binaries.executable()
-    }
-    ios {
-        binaries {
-            framework {
-                baseName = "shared"
-            }
-        }
-    }
+//    js(IR) {
+//        browser {
+//            testTask {
+//                useKarma {
+//                    useChromeHeadless()
+//                    webpackConfig.cssSupport.enabled = true
+//                }
+//            }
+//        }
+//        binaries.executable()
+//    }
+//    ios {
+//        binaries {
+//            framework {
+//                baseName = "shared"
+//            }
+//        }
+//    }
 
     sourceSets {
         val commonMain by getting {
@@ -54,38 +54,38 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
+                implementation("io.ktor:ktor-client-okhttp:1.4.0")
+
             }
         }
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("io.ktor:ktor-client-cio-jvm:1.4.0")
-
             }
         }
-        val jsMain by getting
-        val jsTest by getting {
-            dependencies {
-                implementation(kotlin("test-js"))
-            }
-        }
-        val iosMain by getting {
-            dependencies {
-            }
-        }
-        val iosTest by getting
+//        val jsMain by getting
+//        val jsTest by getting {
+//            dependencies {
+//                implementation(kotlin("test-js"))
+//            }
+//        }
+//        val iosMain by getting {
+//            dependencies {
+//            }
+//        }
+//        val iosTest by getting
     }
 }
-val packForXcode by tasks.creating(Sync::class) {
-    group = "build"
-    val mode = System.getenv("CONFIGURATION") ?: "DEBUG"
-    val sdkName = System.getenv("SDK_NAME") ?: "iphonesimulator"
-    val targetName = "ios" + if (sdkName.startsWith("iphoneos")) "Arm64" else "X64"
-    val framework = kotlin.targets.getByName<KotlinNativeTarget>(targetName).binaries.getFramework(mode)
-    inputs.property("mode", mode)
-    dependsOn(framework.linkTask)
-    val targetDir = File(buildDir, "xcode-frameworks")
-    from({ framework.outputDirectory })
-    into(targetDir)
-}
-tasks.getByName("build").dependsOn(packForXcode)
+//val packForXcode by tasks.creating(Sync::class) {
+//    group = "build"
+//    val mode = System.getenv("CONFIGURATION") ?: "DEBUG"
+//    val sdkName = System.getenv("SDK_NAME") ?: "iphonesimulator"
+//    val targetName = "ios" + if (sdkName.startsWith("iphoneos")) "Arm64" else "X64"
+//    val framework = kotlin.targets.getByName<KotlinNativeTarget>(targetName).binaries.getFramework(mode)
+//    inputs.property("mode", mode)
+//    dependsOn(framework.linkTask)
+//    val targetDir = File(buildDir, "xcode-frameworks")
+//    from({ framework.outputDirectory })
+//    into(targetDir)
+//}
+//tasks.getByName("build").dependsOn(packForXcode)

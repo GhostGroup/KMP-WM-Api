@@ -5,8 +5,6 @@
       <configuration version="3" platform="Common (experimental) " allPlatforms="JS []/JVM [1.6]/Native []/Native [general]" useProjectSettings="false" isTestModule="true" externalProjectId="WmApi">
         <newMppModelJpsModuleKind>SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>
-          <externalSystemTestTask>iosX64Test|WmApi:iosX64Test|iosX64</externalSystemTestTask>
-          <externalSystemTestTask>jsBrowserTest|WmApi:jsTest|js</externalSystemTestTask>
           <externalSystemTestTask>jvmTest|WmApi:jvmTest|jvm</externalSystemTestTask>
         </externalSystemTestTasks>
         <compilerSettings />

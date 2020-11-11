@@ -1,14 +1,17 @@
 import io.ktor.client.*
 import kotlinx.serialization.json.Json
 
-object WmApiDependencies {
+internal object InternalWmApiDependencies {
     var json:Json = Json {
         ignoreUnknownKeys = true
         isLenient = true}
     var httpClient:HttpClient = HttpClient()
-    var prodUrl = "https://api-g.weedmaps.com"
+}
 
+expect val client:HttpClient
+
+object WmApiDependencies {
+    var prodUrl = "https://api-g.weedmaps.com"
     var baseUrl:String = prodUrl
     var acceptanceUrl = "https://api-g-acceptance.internal-weedmaps.com"
-
 }
