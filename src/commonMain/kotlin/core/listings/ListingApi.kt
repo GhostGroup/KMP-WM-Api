@@ -1,13 +1,14 @@
 package core.listings
 
 import WmResult
+import feature.pcp.Location
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import toWmResult
 
 class ListingApi(){
-    private val baseListingUrl = "${WmApiDependencies.baseUrl}/discovery/v1/listings"
-    suspend fun getListings():WmResult<ListingResponse>{
-        return InternalWmApiDependencies.httpClient.get<HttpResponse>(baseListingUrl).toWmResult(InternalWmApiDependencies.json)
+    suspend fun getListings(location:Location):WmResult<ListingResponse>{
+        return InternalWmApiDependencies.httpClient.get<HttpResponse>(getListingForLocationRoute(location))
+            .toWmResult(InternalWmApiDependencies.json)
     }
 }

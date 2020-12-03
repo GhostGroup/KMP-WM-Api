@@ -26,13 +26,14 @@ class PcpApi {
         val subcategories:WmResult<ProductCategoriesResponse> = InternalWmApiDependencies.httpClient
             .get<HttpResponse>(getSubcategoriesRoute(categoryUuid, location))
             .toWmResult(InternalWmApiDependencies.json)
-        subcategories.getDataOrNull()?.data?.categories?.filter { it.uuid != null } ?.let {
+        subcategories.getDataOrNull()?.data?.categories?.filter { it.uuid != null }?.take(5) ?.let {
             for (cat in it){
                 trendingProductsMap[cat.uuid!!] = CompletableDeferred(InternalWmApiDependencies.httpClient
                     .get<HttpResponse>(getTrendingProductsRoute(location, cat.uuid, 30)).toWmResult(InternalWmApiDependencies.json))
             }
         }
-        val nearbyListings = CompletableDeferred(ListingApi().getListings())
+
+        val nearbyListings = CompletableDeferred(ListingApi().getListings(location))
 
         return subcategories.getDataOrNull()?.data?.categories
             ?.map {
