@@ -15,6 +15,7 @@ data class Category(
     val id: Int? = null,
     val name: String? = null,
     val slug: String? = null,
+    val description: String? = null,
     val facet_type: String? = null,
     val uuid: String? = null,
     val subcategories: Array<SubcategoryApiResponse>? = arrayOf(),
@@ -29,5 +30,6 @@ data class SubcategoryApiResponse(
     val facet_type: String? = null,
     val uuid: String? = null,
     val image_url: String? = null,
-    val total_products_count: Int?  = null
+    val total_products_count: Int?  = null,
+    val description:String? = null
 )

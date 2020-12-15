@@ -18,32 +18,32 @@ data class PcpCategory(
 
 @Serializable
 data class PcpSubCategory(
-    val category: Category,
-    val learnExcept: String?,
-    val learnImage: String?,
-    val topRatedProduct: Product?,
-    val popularProducts: Array<Product>?,
-    val nearbyListings: Array<Listing>?
+    val category: Category? = null,
+    val learnExcept: String? = null,
+    val learnImage: String? = null,
+    val topRatedProduct: Product? = null,
+    val popularProducts: Array<Product>? = arrayOf(),
+    val nearbyListings: Array<Listing>? = arrayOf()
 )
 
 
 @Serializable
 data class Rating(
-    val stars: Float,
-    val ratings: Int
+    val stars: Float? = 0f,
+    val ratings: Int? = 0
 )
 
 @Serializable
 data class PriceRange(
-    val minPrice: Double,
-    val maxPrice: Double,
-    val currency: String
+    val minPrice: Double? = null,
+    val maxPrice: Double? = null,
+    val currency: String? = null
 )
 
 @Serializable
 data class Location(
-    val latitude: Double,
-    val longitude: Double
+    val latitude: Double? = 0.0,
+    val longitude: Double? = 0.0
 ){
     fun toLatLngQueryFormat() = "$latitude,$longitude"
 }

@@ -15,6 +15,8 @@ class HelloTest {
 
     @Test
     fun getProductSubcategories() {
+        WmApiDependencies.baseUrl = WmApiDependencies.acceptanceUrl
+
         runBlocking {
             val concentratesCategory = "4a284200-870b-466a-bd95-db521d2c5e69"
             val subcategoriesResponse = PcpApi().getPcpSubcategory(concentratesCategory, Location(33.68,-117.82))

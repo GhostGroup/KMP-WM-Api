@@ -25,7 +25,7 @@ class PcpApi {
 
     suspend fun getPcpSubcategory(categoryUuid: String, location: Location): Array<PcpSubCategory> {
         val trendingProductsMap: HashMap<String, Deferred<WmResult<ProductsResponse>>> = HashMap()
-        val nearbyListingsMap:HashMap<String, Deferred<WmResult<ListingResponse>>>
+        val nearbyListingsMap:HashMap<String, Deferred<WmResult<ListingResponse>>> = HashMap()
 
         val subcategories: WmResult<ProductCategoriesResponse> = InternalWmApiDependencies.httpClient
             .get<HttpResponse>(getSubcategoriesRoute(categoryUuid, location))
@@ -40,28 +40,30 @@ class PcpApi {
                             .get<HttpResponse>(getTrendingProductsForTagRoute(location, cat.uuid, 50))
                             .toWmResult(InternalWmApiDependencies.json)
                     )
+                    nearbyListingsMap[cat.uuid] = CompletableDeferred(ListingApi().getListingsForTag(location, cat.uuid, 5))
                 } else {
                     trendingProductsMap[cat.uuid!!] = CompletableDeferred(
                         InternalWmApiDependencies.httpClient
                             .get<HttpResponse>(getTrendingProductsForCategoryRoute(location, cat.uuid, 50))
                             .toWmResult(InternalWmApiDependencies.json)
                     )
+                    nearbyListingsMap[cat.uuid] = CompletableDeferred(ListingApi().getListingsForCategory(location, cat.uuid, 5))
+
                 }
             }
         }
 
-        val nearbyListings = CompletableDeferred(ListingApi().getListings(location))
-
         return subcategoriesFirstFive
             ?.map {
                 val trending = trendingProductsMap[it.uuid!!]?.await()?.getDataOrNull()?.data?.products
+                val listings = nearbyListingsMap[it.uuid]?.await()?.getDataOrNull()?.data?.listings
                 PcpSubCategory(
                     category = it,
                     learnExcept = null,
                     learnImage = null,
                     topRatedProduct = trending?.firstOrNull(),
                     popularProducts = trending?.filterIndexed { index, product -> index > 0 }?.toTypedArray(),
-                    nearbyListings = nearbyListings.await().getDataOrNull()?.data?.listings
+                    nearbyListings = listings
                 )
             }
             ?.toTypedArray()
