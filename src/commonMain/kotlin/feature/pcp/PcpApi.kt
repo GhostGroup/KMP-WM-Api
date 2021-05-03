@@ -22,6 +22,7 @@ class PcpApi {
     }
 
     suspend fun getPcpSubcategory(categoryUuid: String, location:Location): Array<PcpSubCategory> {
+
         val trendingProductsMap:HashMap<String,Deferred<WmResult<ProductsResponse>>> = HashMap()
         val subcategories:WmResult<ProductCategoriesResponse> = InternalWmApiDependencies.httpClient
             .get<HttpResponse>(getSubcategoriesRoute(categoryUuid, location))

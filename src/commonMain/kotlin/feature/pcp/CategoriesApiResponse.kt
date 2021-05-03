@@ -19,7 +19,8 @@ data class Category(
     val uuid: String? = null,
     val subcategories: Array<SubcategoryApiResponse>? = arrayOf(),
     val image_url: String? = null,
-    val total_products_count: Int? = null
+    val total_products_count: Int? = null,
+    val description:String? = null
 )
 @Serializable
 data class SubcategoryApiResponse(
@@ -29,5 +30,6 @@ data class SubcategoryApiResponse(
     val facet_type: String? = null,
     val uuid: String? = null,
     val image_url: String? = null,
-    val total_products_count: Int?  = null
+    val total_products_count: Int?  = null,
+    val description: String?
 )

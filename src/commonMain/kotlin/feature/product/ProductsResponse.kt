@@ -29,14 +29,16 @@ data class Product(
     val favorites_count: Int? = null,
     val price_stats: PriceStats? = null,
     val online_ordering: OnlineOrdering? = null,
-    val variant: Variant? = null
+    val variant: Variant? = null,
 )
 
 @Serializable
 class Variant(
     val slug: String? = null,
     val price: Price? = null,
-    val listing: Listing? = null
+    val listing: Listing? = null,
+    val price_visibility:String? = null
+
 )
 
 @Serializable
