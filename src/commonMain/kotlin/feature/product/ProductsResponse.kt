@@ -37,7 +37,8 @@ class Variant(
     val slug: String? = null,
     val price: Price? = null,
     val listing: Listing? = null,
-    val menu_item_id:String? = null
+    val menu_item_id:String? = null,
+    val price_visibility:String? = null
 )
 
 @Serializable
